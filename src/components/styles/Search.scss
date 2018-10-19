@@ -1,0 +1,41 @@
+.search {
+  margin:20px;
+
+  > form {
+    display:flex;
+    justify-content:center;
+    align-items:normal;  
+    border:1px solid #EFEFEF;
+    input, button {
+      font-size:1.3em;
+      padding:10px;
+      border:0px;
+      outline:none;
+      background:white;
+      &:first-child {
+        border-radius:10px 0px 0px 10px;
+      }
+      &:nth-child(2) {
+        border-radius:0px 10px 10px 0px;
+      }
+    }
+
+
+    button {
+      color:#999;
+      border:0px;
+      outline:none;
+      font-size:1.5em;
+      &:hover {
+        color:#333;
+      }
+      &.spinner svg {
+        animation:spin 2s linear infinite;
+      }
+      
+    } 
+  }
+}
+
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
