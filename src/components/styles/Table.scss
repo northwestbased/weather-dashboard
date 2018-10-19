@@ -1,15 +1,9 @@
+.table {
 
-
-
-table {
-    .table-header .date {
-        font-size: .8em;
-    }
-
+    margin:20px 30px;
   
     border-radius:10px;
     border-collapse: collapse;
-    margin:auto;
     background:white; 
     box-shadow: 3px 2px 5px gray;
 
@@ -23,11 +17,17 @@ table {
           color:#333;
         }
     } 
-    tr {
-        &:first-child td {
+    .row {
+        display:flex;
+
+        > * {
+            flex: 2 1 0;
+        }
+
+        &:first-child .data {
             border-top:0px;
         }
-        &:last-child td {
+        &:last-child .data {
             border-bottom:0px;
             .down {
                 display:none;
@@ -41,7 +41,7 @@ table {
         }
 
         &.search-result, &.forecast-week {
-            td {
+            .data {
                 padding-top:0px;
             }
         }
@@ -56,10 +56,11 @@ table {
         }
 
         
-        td {
+        .data {
             border: 1px solid #EFEFEF;
             padding:10px; 
             text-align:center;
+            overflow:hidden;
 
             &.current-conditions .location {
                 font-weight:bold;
@@ -67,6 +68,7 @@ table {
             
             &:first-child {
                 border-left:0px;
+                flex-grow:.5;
             }
             &:last-child {
                 border-right:0px;

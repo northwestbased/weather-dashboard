@@ -9,8 +9,8 @@ class TableRow extends Component {
             return ""
         }
         return (
-            <tr className={this.props.className}>
-                <td className="rowControls">
+            <div className={this.props.className + " forecast row"}>
+                <div className="rowControls data">
                     <div>
                         <button
                             className="up"
@@ -35,9 +35,9 @@ class TableRow extends Component {
                             <FontAwesomeIcon icon={faArrowDown} />
                         </button>
                     </div>
-                </td>
+                </div>
 
-                <td className="current-conditions">
+                <div className="current-conditions data">
                     <div>
                         <div><img src={location.current.condition.icon} 
                         title={location.current.condition.text}
@@ -48,17 +48,17 @@ class TableRow extends Component {
                             <div className="location">{location.location.name}, {location.location.region}</div>
                         </div>
                     </div>
-                </td>
+                </div>
 
                 {location.forecast.forecastday.map(d => (
-                    <td className="forecast-day">
+                    <div className="forecast-day data">
                         <img src={d.day.condition.icon} alt={d.day.condition.text} title={d.day.condition.text} />
                         <div> High: {d.day.maxtemp_f} °F</div>
                         <div> Low: {d.day.mintemp_f} °F</div>
-                    </td>
+                    </div>
                 )
                 )}
-            </tr>
+            </div>
         )
     }
 }

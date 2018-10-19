@@ -29,7 +29,6 @@ class Search extends Component {
     }
 
     render() {
-        debugger
         return (
             <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="search location"/>
